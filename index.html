@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Gameplay programmer and project lead</title>
+  <meta name="description" content="Gameplay programmer and project lead with two years leading a team on [Game Name]. Unity, Unreal, and Node.js work.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Your Name</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="flagship.html">[Game Name]</a></li>
+          <li><a href="#projects">Other projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= HERO + REEL ================= -->
+    <section class="hero">
+      <div class="wrap">
+        <h1>Gameplay programmer and project lead.</h1>
+        <p class="lede">Two years leading a team on [Game Name], and building its gameplay systems in [Engine]. I also work in Unity, Unreal, and Node.js.</p>
+
+        <div class="viewfinder">
+          <span class="corner-bl"></span><span class="corner-br"></span>
+
+          <!-- REPLACE the placeholder with your reel. Pick ONE:
+               Self-hosted:
+               <video controls preload="metadata" poster="images/reel-poster.jpg">
+                 <source src="images/reel.mp4" type="video/mp4">
+               </video>
+
+               YouTube / Vimeo:
+               <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Demo reel" allowfullscreen></iframe>
+          -->
+          <div class="placeholder">Demo reel (60 to 90 seconds). Open with the best moments of [Game Name], then quick cuts of your other work.</div>
+        </div>
+        <p class="caption">Reel, 1:15. Includes [Game Name], [Unity project], [Unreal project], and [Node.js game].</p>
+      </div>
+    </section>
+
+    <!-- ================= FLAGSHIP FEATURE ================= -->
+    <section class="section section--tint" id="flagship">
+      <div class="wrap feature">
+        <div class="media">
+          <!-- Replace with a GIF or key screenshot: <img src="images/flagship-hero.gif" alt="Describe what is happening"> -->
+          <div class="placeholder">Flagship GIF or key screenshot</div>
+        </div>
+        <div>
+          <h2>[Game Name]</h2>
+          <p>[2 to 3 sentences. What the game is, who it is for, and the one thing that makes it interesting to play.]</p>
+          <p>I lead a team of [N] across [design, art, audio, etc.] and own the gameplay code: [system 1], [system 2], and [system 3].</p>
+          <div class="btn-row">
+            <a class="btn" href="flagship.html">Read the case study</a>
+            <a class="btn btn--ghost" href="#">Play the build</a> <!-- update link or delete -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OTHER PROJECTS ================= -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Other projects</h2>
+          <p>Smaller projects that show I can work across engines and languages.</p>
+        </div>
+
+        <ul class="filters" aria-label="Engines used">
+          <li><span>Unity</span></li>
+          <li><span>Unreal</span></li>
+          <li><span>Node.js</span></li>
+        </ul>
+
+        <!-- Duplicate an <li> to add a project.
+             data-engine can be: unity, unreal, node (anything else uses the neutral color).
+             Each card links to its own page; copy project.html for each one. -->
+        <ul class="project-grid">
+          <li>
+            <a class="project-card" data-engine="unity" href="project.html">
+              <div class="placeholder thumb">Thumbnail</div>
+              <div class="body">
+                <h3>[Unity project name]</h3>
+                <p class="tech">Unity, C#</p>
+                <p>[One line on the skill it shows, e.g. "State-machine enemy AI with a data-driven wave spawner."]</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="project-card" data-engine="unreal" href="project.html">
+              <div class="placeholder thumb">Thumbnail</div>
+              <div class="body">
+                <h3>[Unreal project name]</h3>
+                <p class="tech">Unreal Engine, C++ and Blueprints</p>
+                <p>[One line on the skill it shows.]</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class="project-card" data-engine="node" href="project.html">
+              <div class="placeholder thumb">Thumbnail</div>
+              <div class="body">
+                <h3>[Node.js game name]</h3>
+                <p class="tech">Node.js, JavaScript, WebSockets</p>
+                <p>[One line on the skill it shows, e.g. "Real-time multiplayer with server-side game state."]</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section section--tint" id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>Skills</h2>
+        </div>
+        <dl class="skills">
+          <div>
+            <dt>Engines</dt>
+            <dd>Unity, Unreal Engine, [others]</dd>
+          </div>
+          <div>
+            <dt>Languages</dt>
+            <dd>C#, C++, JavaScript, [others]</dd>
+          </div>
+          <div>
+            <dt>Leadership and process</dt>
+            <dd>Sprint planning, code review, scope management, [Git workflow], [Jira / Trello / etc.]</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section" id="about">
+      <div class="wrap about">
+        <div class="placeholder portrait">Photo (optional)</div>
+        <div>
+          <div class="section-head"><h2>About</h2></div>
+          <p>[Who you are and how you got into games. Keep it to a short paragraph.]</p>
+          <p>[What you do on a team: the way you work with designers and artists, and how you lead.]</p>
+          <p>[What you are looking for next: the kind of studio, role, or project.]</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= CONTACT FOOTER ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p>I am open to [gameplay programming roles / junior positions / etc.]. The quickest way to reach me is email.</p>
+      <div class="btn-row">
+        <a class="btn" href="mailto:you@example.com">Email me</a>
+        <a class="btn btn--ghost" href="resume.pdf" download>Download resume</a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/your-handle">GitHub</a></li>
+        <li><a href="https://your-handle.itch.io">itch.io</a></li>
+        <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+      </ul>
+      <p class="fine-print">&copy; 2026 Your Name</p>
+    </div>
+  </footer>
+</body>
+</html>

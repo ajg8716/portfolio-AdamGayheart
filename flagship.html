@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Game Name] case study | Your Name</title>
+  <meta name="description" content="Case study: leading a team of [N] and building the gameplay systems for [Game Name].">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Adam Gayheart</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="flagship.html" aria-current="page">State of Entropy</a></li>
+          <li><a href="index.html#projects">Other projects</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ================= TITLE + FACTS ================= -->
+    <section class="case-hero">
+      <div class="wrap">
+        <h1>State of Entropy</h1>
+        <p class="lede">A 3D, sci-fi, stalker horror game where you must navigate a derelict ship in 
+          full zero-gravity to make a repairs all the while an other being lurks in the shadows</p>
+
+        <dl class="facts" style="margin-top:2rem">
+          <div><dt>My roles</dt><dd>Project Lead, Gameplay Programmer</dd></div>
+          <div><dt>Team</dt><dd>23 people</dd></div>
+          <div><dt>Duration</dt><dd>2 years, ongoing</dd></div>
+          <div><dt>Engine</dt><dd>Unity</dd></div>
+          <div><dt>Platform</dt><dd>PC</dd></div>
+        </dl>
+
+        <div class="viewfinder">
+          <span class="corner-bl"></span><span class="corner-br"></span>
+          <!-- Replace with gameplay video (see index.html for video and iframe examples) -->
+          <div class="placeholder">Gameplay trailer or footage</div>
+        </div>
+        <div class="btn-row" style="margin-top:1.75rem">
+          <a class="btn btn--ghost" href="https://caterwaul-studio.itch.io/stateofentropy">View on itch.io</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap case-layout">
+
+      <!-- Table of contents (sticky on wide screens) -->
+      <nav class="toc" aria-label="On this page">
+        <p>On this page</p>
+        <ul>
+          <li><a href="#game">The game</a></li>
+          <li><a href="#programming">Programming</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#outcome">Outcome and reflection</a></li>
+        </ul>
+      </nav>
+
+      <div class="case-body">
+
+        <!-- ================= THE GAME ================= -->
+        <section id="game">
+          <h2>The Game</h2>
+          <p>This game follows an astronaut woken from cryosleep by their ship's onboard AI, Alan.
+            Alan leads the player through the ship to make vital repairs, incrementally restoring its 
+            connection to terminals in place of save points. 
+          </p>
+          <p>The player progresses linearly, with environmental puzzles and hazards standing between them and escape.
+            With full zero-gravity movement mechanics, the level design is unconventional: if you don't remain alert 
+            while floating through corridors, they will get lost. 
+          </p>
+          <p>
+            Our stalker monster, the Geist, persistently hunts the player. Adding fear and paranoia to what would 
+            otherwise be routine maintenance tasks
+          </p>
+          <h2>How it Started</h2>
+          <p>This project began as a fun, three-month class project with my three friends. Through the past two years, 
+            we have continued to develop it, gaining incredible opportunities and new team members. 
+          </p>
+          <p>We secured two rounds of funding through the MAGIC Maker Program, where we worked in a studio environment. 
+            There, we adopted professional standards and used an Agile workflow to deliver a prototype and our first level. 
+            We are now building the second level to complete the demo and publish it on Steam. 
+          </p>
+          <div class="gallery">
+            <div class="placeholder">Screenshot 1</div>
+            <div class="placeholder">Screenshot 2</div>
+            <div class="placeholder">Screenshot 3</div>
+          </div>
+        </section>
+
+        <!-- ================= PROGRAMMING ================= -->
+        <section id="programming">
+          <h2>Programming</h2>
+          <p>I own the gameplay code. These are the systems I am proudest of.</p>
+
+          <!-- Copy this .system block for each system (aim for 2 or 3) -->
+          <div class="system">
+            <h3>Peristent Player Manager</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>[What was broken, slow, or missing, and why it mattered to the game or the team.]</dd>
+              <dt>Approach</dt>
+              <dd>[What you built and the key design decisions. Name the patterns and why you chose them.]</dd>
+              <dt>Result</dt>
+              <dd>[What improved. Use numbers if you have them: iteration time, bug count, frame time.]</dd>
+            </dl>
+          </div>
+
+          <figure>
+            <pre><code>// A short snippet or diagram of the system above.
+// Pick the most interesting 15 to 25 lines.
+public interface IAbility
+{
+    void Activate(AbilityContext context);
+}</code></pre>
+            <figcaption>[One line explaining what the snippet shows.]</figcaption>
+          </figure>
+
+          <div class="system">
+            <h3>Zero-Gravity Movement</h3>
+            <dl>
+              <dt>Problem</dt><dd>[...]</dd>
+              <dt>Approach</dt><dd>[...]</dd>
+              <dt>Result</dt><dd>[...]</dd>
+            </dl>
+          </div>
+
+          <figure>
+            <div class="media"><div class="placeholder">GIF or architecture diagram</div></div>
+            <figcaption>[Caption.]</figcaption>
+          </figure>
+        </section>
+
+        <!-- ================= LEADERSHIP ================= -->
+        <section id="leadership">
+          <h2>Leadership</h2>
+          <p>Everyone on the team, me included, is a full-time student. 
+            I lead by planning around that reality instead of ignoring it, so the work stays steady and realistic over a two-year project. 
+          </p>
+
+          <h3>The team</h3>
+          <p>[Team size and roles, and how work is divided between them.]</p>
+
+          <h3>How we work</h3>
+          <ul>
+            <li><strong>Know the schedules:</strong>  I track each member's classes, deadlines, and obligations 
+              so I know what people can realistically take on before I plan a cycle.
+            </li>
+            <li><strong>Adapt meetings:</strong> I move meeting times to fit people's availability instead of 
+              asking people to fit the meetings.
+            </li>
+            <li><strong>Scope realistically:</strong> We use an Agile to size tasks to what each person can deliver under 
+              their constraints. Each cycle has  four-week milestones, and each week is a sprint. We track progress on our 
+              Trello board and cross-reference it with our Gantt timeline. Weekly stand-ups let members showcase progress.
+            </li>
+            <li><strong>Design before building:</strong>  Every task begins with a design document where the member lays out their 
+              vision and implementation plan. I review each one and leave notes to keep the design consistent and easier to build. 
+              We archive them in Google Drive so developers in other disciplines can use them later. 
+            </li>
+            <li><strong>Code quality and pipeline:</strong> We use GitHub for version control. With a consolidated main branch 
+              and development branches. Branches ready for merge go through pull requests, reviewd by me before merge. 
+              Developers then explain their finalized system with technical architecture documents for future reference 
+              by other developers. Archived in our Google Drive. 
+            </li>
+          </ul>
+
+          <h3>A hard moment</h3>
+          <p><strong>The constraint. </strong>
+            While building the second level, the Fall semester began, and many of our artists needed to step away to focus 
+            on their capstone projects. I led outreach and recruitment to fill the gaps, and we brought on strong new artists 
+            to work as a sub-team of the art team. Their job was to create assets for a large section of the level that was fully 
+            grayboxed at the time. We found great talent, but didn't have enough to complete the space on time. 
+          </p>
+          <p><strong>The decision. </strong>
+            I decided to shelve this section and prioritize the first half of the level, which features our puzzle. 
+            I reassigned the new artists to polish and add detail to areas we were keeping. This narrowed their tasks and gave 
+            them more time to complete their work alongside their other commitments.
+          </p>
+          <p><strong>The result.</strong>
+            The programming team also benefited. With a smaller scope, they now have time to polish our current systems. 
+            We chose a level we can finish well over a larger one we couldn’t, and the demo is better off and promises more. 
+          </p>
+        </section>
+
+        <!-- ================= OUTCOME ================= -->
+        <section id="outcome">
+          <h2>Outcome and reflection</h2>
+          <p>The project has grown from a class assignment into a funded, studio-style production.</p>
+          <h3>Milestones</h3>
+          <ul>
+            <li>Secured two rounds of funding through the MAGIC Maker Program</li>
+            <li>Delivered a prototype and a complete first level using an Agile workflow</li>
+            <li>Currently building the second level to finish the demo for a Steam release</li>
+          </ul>
+          <h3>Events</h3>
+          <ul>  
+            <li>Showcased the game at ROC Game Fest twice</li>
+            <li>Showcased the game at Imagine RIT once</li>
+          </ul>
+          <h3>Community</h3>
+          <ul>  
+            <li>46 community Discord members</li>
+            <li>226 followers on Instagram, 79 followers on TikTok, and 41 subscribers on YouTube</li>
+          </ul>
+
+          <h3>What I would do differently</h3>
+          <p>As this was my first time leading a professional project, I needed to learn a lot of strategies 
+            and skills on the job. This caused friction for a short time until proper tracking was in place. 
+            Team roles were not concreely defined, tasks overlapped, design cohesion was sparse.
+          </p>
+          <p>
+            On my next game project. I will structure the workflow first. I will write the high concept design 
+            document at the start and let it drive the timeline. 
+          </p>
+        </section>
+
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="pager">
+        <a href="index.html">Back to home</a>
+        <a href="index.html#projects">See other projects</a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <p>I am open to [gameplay programming roles / junior positions / etc.].</p>
+      <div class="btn-row">
+        <a class="btn" href="mailto:you@example.com">Email me</a>
+        <a class="btn btn--ghost" href="resume.pdf" download>Download resume</a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/your-handle">GitHub</a></li>
+        <li><a href="https://your-handle.itch.io">itch.io</a></li>
+        <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+      </ul>
+      <p class="fine-print">&copy; 2026 Your Name</p>
+    </div>
+  </footer>
+</body>
+</html>
