@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[Game Name] case study | Your Name</title>
-  <meta name="description" content="Case study: leading a team of [N] and building the gameplay systems for [Game Name].">
+  <title>State of Entropy case study | Adam Gayheart</title>
+  <meta name="description" content="Case study: leading a team of 24 and building the gameplay systems for State of Entropy.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles/.css/styleFlagship.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -35,20 +35,21 @@
       <div class="wrap">
         <h1>State of Entropy</h1>
         <p class="lede">A 3D, sci-fi, stalker horror game where you must navigate a derelict ship in 
-          full zero-gravity to make a repairs all the while an other being lurks in the shadows</p>
+          full zero-gravity to make a repairs all the while a cosmic being lurks in the shadows</p>
 
         <dl class="facts" style="margin-top:2rem">
           <div><dt>My roles</dt><dd>Project Lead, Gameplay Programmer</dd></div>
-          <div><dt>Team</dt><dd>23 people</dd></div>
-          <div><dt>Duration</dt><dd>2 years, ongoing</dd></div>
+          <div><dt>Team</dt><dd>24 people</dd></div>
+          <div><dt>Duration</dt><dd>1.5 years, ongoing</dd></div>
           <div><dt>Engine</dt><dd>Unity</dd></div>
           <div><dt>Platform</dt><dd>PC</dd></div>
         </dl>
 
         <div class="viewfinder">
           <span class="corner-bl"></span><span class="corner-br"></span>
-          <!-- Replace with gameplay video (see index.html for video and iframe examples) -->
-          <div class="placeholder">Gameplay trailer or footage</div>
+            <video controls autoplay poster="content/images/State of Entropy Banner.png">
+                 <source src="content/videos/StateofEntropyROCGameFest.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="btn-row" style="margin-top:1.75rem">
           <a class="btn btn--ghost" href="https://caterwaul-studio.itch.io/stateofentropy">View on itch.io</a>
@@ -62,7 +63,7 @@
       <nav class="toc" aria-label="On this page">
         <p>On this page</p>
         <ul>
-          <li><a href="#game">The game</a></li>
+          <li><a href="#game">The Game</a></li>
           <li><a href="#programming">Programming</a></li>
           <li><a href="#leadership">Leadership</a></li>
           <li><a href="#outcome">Outcome and reflection</a></li>
@@ -80,14 +81,14 @@
           </p>
           <p>The player progresses linearly, with environmental puzzles and hazards standing between them and escape.
             With full zero-gravity movement mechanics, the level design is unconventional: if you don't remain alert 
-            while floating through corridors, they will get lost. 
+            while floating through corridors, you will get lost. 
           </p>
           <p>
             Our stalker monster, the Geist, persistently hunts the player. Adding fear and paranoia to what would 
             otherwise be routine maintenance tasks
           </p>
           <h2>How it Started</h2>
-          <p>This project began as a fun, three-month class project with my three friends. Through the past two years, 
+          <p>This project began as a fun, three-month class project with my three friends. Through the past year and a half, 
             we have continued to develop it, gaining incredible opportunities and new team members. 
           </p>
           <p>We secured two rounds of funding through the MAGIC Maker Program, where we worked in a studio environment. 
@@ -95,9 +96,18 @@
             We are now building the second level to complete the demo and publish it on Steam. 
           </p>
           <div class="gallery">
-            <div class="placeholder">Screenshot 1</div>
-            <div class="placeholder">Screenshot 2</div>
-            <div class="placeholder">Screenshot 3</div>
+            <div class="howitstarted">
+              <img src="content/images/22 dorm hall inspect final doors.png" alt="dorm hall prototype">
+            </div>
+            <div class="howitstarted">
+              <img src="content/images/Screenshot 2025-12-10 132729.png" alt="dorm hall final">
+            </div>
+            <div class="howitstarted">
+              <img src="content/images/18 dorm room wrist monitor tutorial begin.png" alt="wrist monitor prototype">
+            </div>
+            <div class="howitstarted">
+              <img src="content/images/Screenshot 2025-12-10 133025.png" alt="wrist monitor final">
+            </div>
           </div>
         </section>
 
@@ -106,41 +116,118 @@
           <h2>Programming</h2>
           <p>I own the gameplay code. These are the systems I am proudest of.</p>
 
-          <!-- Copy this .system block for each system (aim for 2 or 3) -->
-          <div class="system">
-            <h3>Peristent Player Manager</h3>
-            <dl>
-              <dt>Problem</dt>
-              <dd>[What was broken, slow, or missing, and why it mattered to the game or the team.]</dd>
-              <dt>Approach</dt>
-              <dd>[What you built and the key design decisions. Name the patterns and why you chose them.]</dd>
-              <dt>Result</dt>
-              <dd>[What improved. Use numbers if you have them: iteration time, bug count, frame time.]</dd>
-            </dl>
-          </div>
-
-          <figure>
-            <pre><code>// A short snippet or diagram of the system above.
-// Pick the most interesting 15 to 25 lines.
-public interface IAbility
-{
-    void Activate(AbilityContext context);
-}</code></pre>
-            <figcaption>[One line explaining what the snippet shows.]</figcaption>
-          </figure>
-
+                    <!-- Zero Gravity Movement -->
           <div class="system">
             <h3>Zero-Gravity Movement</h3>
             <dl>
-              <dt>Problem</dt><dd>[...]</dd>
-              <dt>Approach</dt><dd>[...]</dd>
-              <dt>Result</dt><dd>[...]</dd>
+              <dt>Problem</dt>
+              <dd>
+                We wanted our game to feel unique. Inspired by films such as <i>Gravity (2013)</i> and <i>Alien: Romulus (2024)</i>, 
+                we loved the horror of being vulnerable in zero gravity. I set out to build a player controller that removes 
+                conventional WASD walking and forces the player to climb along the environment to get around. 
+              </dd>
+              <dt>Approach</dt>
+              <dd>
+                <ol>
+                  <li><strong>Research: </strong>I started by watching films and documentaries on zero-gravity movement and 
+                    took notes that defined what the controls needed to feel believable. 
+                  </li>
+                  <li><strong>Design for fun: </strong>The game isn’t strictly realistic, so in my high concept, I chose fun 
+                    over realism: ping-ponging off walls, throwing objects to push you back, and rolling to reorient. None of it 
+                    works in true zero gravity, but it’s fun to play. 
+                  </li>
+                  <li><strong>Implement, then test: </strong>I made incremental upgrades, then tested them with in-house and external 
+                    playtesting. This gave me consistent feedback to turn into updates. In one case, playtesting settled a team bet over 
+                    whether to increase grab length. I lost that one, but agreed right away once I saw that players learned the controls 
+                    more easily.
+                  </li>
+                </ol>
+              </dd>
+              <dt>Result</dt><dd>These unconventional player controls became a pillar of our design philosophy and pushed the whole 
+                team to think creatively about designing a game with no up, down, left, or right. It led us to focus the first level 
+                on limited action, giving players more time to learn the controls. This paid off: most testers now get a handle on them 
+                in about 5 to 10 minutes. When early on, some would simply walk away from the keyboard. 
+              </dd>
             </dl>
           </div>
 
           <figure>
-            <div class="media"><div class="placeholder">GIF or architecture diagram</div></div>
-            <figcaption>[Caption.]</figcaption>
+            <div class="media">
+              <div class="zeroGravGif">
+                <img src="content/gifs/ZeroGMovement.gif" alt="zero-gravity gif">
+              </div>
+            </div>
+            <figcaption>ZeroGravity.cs is a script that controls all player movement in the game. 
+              It features omnidirectional camera movement, camera rolling, a grab-and-propel system, and rigidbody physics </figcaption>
+          </figure>
+          <!-- Persistent Manager -->
+          <div class="system">
+            <h3>Persistent Player Manager</h3>
+            <dl>
+              <dt>Problem</dt>
+              <dd>Level two exposed that our player controller, and every system that references it, was tied to level one, 
+                so the player couldn’t carry over between scenes. Changes were necessary to support more levels. We also needed 
+                to update the Global Save Manager to support these improvements.
+              </dd>
+              <dt>Approach</dt>
+              <dd>
+                <ol>
+                  <li><strong>Persistent player: </strong>I parented all player objects under the Persistent GameObject with 
+                    PersistentManager.cs, which holds references to the key player scripts and calls DontDestroyOnLoad () so 
+                    the player survives scene loads and checkpoint reloads. 
+                  </li>
+                  <li><strong>Restoring references: </strong>Testing exposed many missing references on scene load, so I 
+                    updated each script to find the PersistentManager and re-link what it needs. 
+                  </li>
+                  <li><strong>Save manager: </strong>Our architecture documentation showed the player was being recreated 
+                    on every load. I added restore logic to CheckpointManager.cs and player data saving and loading in 
+                    ZeroGravity.cs, triggered when checkpoints are reached and loaded. 
+                  </li>
+                  <li><strong>Packaging: </strong>After a second round of bug testing, I turned the setup into a drag-in prefab, 
+                    set up level two’s checkpoints, and wrote an architecture document for the team
+                  </li>
+                </ol>
+              </dd>
+              <dt>Result</dt>
+              <dd>The player now moves between levels while keeping momentum, orientation, health, and inventory, and the prefab 
+                drops into any new level. 
+              </dd>
+            </dl>
+          </div>
+
+          <figure>
+            <pre><code>
+            public class PersistentManager: MonoBehaviour 
+            { 
+            [SerializeField] private ZeroGravity player;
+            public ZeroGravity Player => player;
+
+            [SerializeField] public InventoryManager InventoryManager;
+            [SerializeField] public PlayerUIManager PlayerUIManager;
+            [SerializeField] public WristMonitor WristMonitor;
+
+            public static PersistantManager Instance { get; set; }
+
+            private void Awake()
+            {
+                if(Instance != null && Instance != this)
+                {
+                    // if persistent player already exists, destroy duplicate
+                    Destroy(gameObject);
+                    return;
+                }
+                
+                Instance = this;
+
+                if(player == null)
+                    player = GetComponentInChildren<ZeroGravity>();
+
+                DontDestroyOnLoad(gameObject);
+            }
+          </code></pre>
+            <figcaption>PersistantManager.cs: a singleton that keeps one player alive across scenes and discards duplicates, 
+              so the prefab can sit in every level. 
+            </figcaption>
           </figure>
         </section>
 
@@ -148,11 +235,154 @@ public interface IAbility
         <section id="leadership">
           <h2>Leadership</h2>
           <p>Everyone on the team, me included, is a full-time student. 
-            I lead by planning around that reality instead of ignoring it, so the work stays steady and realistic over a two-year project. 
+            I lead by planning around that reality instead of ignoring it, so the work stays steady and realistic over a one-and-a-half-year project. 
           </p>
 
           <h3>The team</h3>
-          <p>[Team size and roles, and how work is divided between them.]</p>
+          <li><strong>Adam Gayheart</strong>
+            <br>Project Lead (May 2025 to present):<i> planning, recruitment, code review</i>
+            <br>Lead Programmer (January 2026 to present): <i>zero-gravity movement prototype, player UI manager, persistent player data, flashlight, inventory manager, final enemy AI</i>
+            <br>Narrative Writer (May 2025 to present): <i>narrative scripts, storyboarding</i>
+            <br>Marketing Strategist (September 2025 to December 2025): <i>marketing strategy proposal</i>
+          </li>
+
+          <details close>
+            <summary>Programming</summary>
+                <ul>
+                  <li><strong>Aidan Kamp</strong>
+                    <br>Lead Programmer (May 2025 to January 2026): <i>planning, task organization, level 1 gameplay events, enemy AI prototype</i>
+                  </li>
+
+                  <li><strong>Auden Clifford</strong>
+                    <br>Level Designer (January 2026 to May 2026): <i>level 2 design, level 2 gameplay events</i>
+                  </li>
+
+                  <li><strong>Jacob Swihart</strong>
+                    <br>Gameplay Programmer (September 2026 to present): <i>fusebox puzzle</i>
+                  </li>
+
+                  <li><strong>Justin Tong</strong>
+                    <br>Gameplay Programmer (January 2026 to May 2026): <i>enemy AI production</i>
+                  </li>
+
+                  <li><strong>Reilly Lawson</strong>
+                    <br>UI Developer (May 2025 to December 2025): <i>player ui manager production, wrist monitor, menu systems with customizable options, post-processing</i>
+                  </li>
+
+                  <li><strong>Timothy Clark</strong>
+                    <br>Audio Programmer (January 2026 to May 2026): <i>audio culling system, Steam audio integration</i>
+                    <br>Gameplay Programmer (May 2026 to present): <i>fire extinguisher & fire, electrical hazards, zero gravity movement final</i>
+                  </li>
+
+                  <li><strong>Thomas Roman</strong>
+                    <br>Gameplay Systems Programmer (September 2025 to January 2026): <i>global save manager, zero gravity movement production</i>
+                  </li>
+                </ul>
+          </details>
+
+
+          <details close>
+            <summary>Art</summary>
+                <ul>
+                  <li><strong>Noah Kasper</strong>
+                    <br>Art Lead (May 2025 to January 2026): <i>planning, task organization, art bible, level 1 room assets</i>
+                    <br>Technical Artist (January 2026 to present): <i>Ui assets, interactive UI, level lighting, map system, floating objects, creature materials & post-processing</i>
+                  </li>
+
+                  <li><strong>Tobin Pederson</strong>
+                    <br>Art Lead (January 2026 to May 2026): <i>planning, task organization</i>
+                    <br>Concept Artist (July 2025 to October 2025): <i>level 1 concept art, creature concept art</i>
+                    <br>Character Artist (October 2025 to May 2026): <i>creature assets</i>
+                  </li>
+
+                  <li><strong>Benson Zhang</strong>
+                    <br>3D Environmental Artist (January 2026 to August 2026): <i>level 2 room assets, cadaver assets</i>
+                  </li>
+
+                  <li><strong>Dat Phan</strong>
+                    <br>3D Environmental Artist (September 2025 to December 2025): <i>level 1 room assets, prop assets</i>
+                  </li>
+
+                  <li><strong>Emery Sadler</strong>
+                    <br>3D Environmental Artist (September 2026 to present): <i>level 2 room assets, prop assets</i>
+                  </li>
+
+                  <li><strong>Hassan Ismail</strong>
+                    <br>Concept Artist (September 2026 to present): <i>level 2 concept art</i>
+                  </li>
+
+                  <li><strong>Hayden Bush-Resko</strong>
+                    <br>3D Environmental Artist (September 2025 to December 2025): <i>level 1 room assets, prop assets</i>
+                  </li>
+
+                  <li><strong>Jia Xin Huang</strong>
+                    <br>3D Environmental Artist (September 2026 to present): <i>level 2 room assets, prop assets</i>
+                  </li>
+
+                  <li><strong>Michael Rivera</strong>
+                    <br>3D Environmental Artist (January 2026 to August 2026): <i>level 2 room assets, prop assets</i>
+                  </li>
+
+                  <li><strong>Morgan Matthews</strong>
+                    <br>Character Artist (January 2026 to May 2026):<i> cadaver concept art, character clothes assets, prop assets</i>
+                  </li>
+
+                  <li><strong>Timothy Wisdom </strong>
+                    <br>Character Animator (September 2026 to present): <i>creature rigging, creature animations</i>
+                  </li>
+                </ul>
+          </details>
+
+            <details close>
+            <summary>Audio</summary>
+                <ul>
+                  <li><strong>Joel Pho</strong>
+                    <br>Audio Lead (September 2025 to May 2026): <i>audio implementation, audio mixing</i>
+                    <br>Game Composer (October 2025 to present): <i>main title music, level 1 music, level 2 music</i>
+                    <br>SFX Designer (January 2026 to August 2026): <i>menu SFX, game mechanic SFX</i>
+                  </li>
+
+                  <li><strong>Casey Blunt</strong>
+                    <br>SFX Designer (May 2025 to December 2025; September 2026 to present): <i>game mechanic SFX, environmental SFX</i>
+                    <br>Creature SFX Designer (May 2025 to December 2025; September 2026 to present): <i>creature SFX</i>
+
+                  </li>
+
+                  <li><strong>Evan Perotti </strong>
+                    <br>Audio Engineer (May 2025 to August 2025): <i>game audio system, audio implementation, audio mixing</i>
+                    <br>Game Composer (August 2025 to October 2025): <i>level 1 music</i>
+                  </li>
+
+                  <li><strong>Thomas Revord</strong>
+                    <br>Audio Programmer (September 2025 to present): <i>audio implementation, audio mixing</i>
+                  </li>
+                </ul>
+          </details>
+
+          <details close>
+            <summary>Marketing</summary>
+            <ul>
+              <li><strong>Kayleigh Gallagher</strong>
+                <br>Marketing Specialist (June 2026 to August 2026): <i>social media management, content scheduling & creation, playtest sourcing, marketing strategy final</i>
+              </li>
+            </ul>
+          </details>
+
+          <details close>
+            <summary>Supported by producers from MAGIC Spell Studios</summary>
+            <ul>
+              <li>Aaron Nieboer</li>
+              <li>Amanda Hughes</li>
+              <li>Brenda Schlageter</li>
+              <li>David Long</li>
+              <li>David Sanchez</li>
+              <li>Dennis McCorry</li>
+              <li>Eva Sarachan-Dubay</li>
+              <li>Jennifor Hinton</li>
+              <li>Kaitlyn Rodriguez</li>
+              <li>Vincent Lee</li>
+            </ul>
+          </details>
 
           <h3>How we work</h3>
           <ul>
@@ -162,7 +392,7 @@ public interface IAbility
             <li><strong>Adapt meetings:</strong> I move meeting times to fit people's availability instead of 
               asking people to fit the meetings.
             </li>
-            <li><strong>Scope realistically:</strong> We use an Agile to size tasks to what each person can deliver under 
+            <li><strong>Scope realistically:</strong> We use Agile to size tasks to what each person can deliver under 
               their constraints. Each cycle has  four-week milestones, and each week is a sprint. We track progress on our 
               Trello board and cross-reference it with our Gantt timeline. Weekly stand-ups let members showcase progress.
             </li>
@@ -178,20 +408,20 @@ public interface IAbility
           </ul>
 
           <h3>A hard moment</h3>
-          <p><strong>The constraint. </strong>
+          <p><strong>The Constraint: </strong>
             While building the second level, the Fall semester began, and many of our artists needed to step away to focus 
             on their capstone projects. I led outreach and recruitment to fill the gaps, and we brought on strong new artists 
             to work as a sub-team of the art team. Their job was to create assets for a large section of the level that was fully 
             grayboxed at the time. We found great talent, but didn't have enough to complete the space on time. 
           </p>
-          <p><strong>The decision. </strong>
+          <p><strong>The Decision: </strong>
             I decided to shelve this section and prioritize the first half of the level, which features our puzzle. 
             I reassigned the new artists to polish and add detail to areas we were keeping. This narrowed their tasks and gave 
             them more time to complete their work alongside their other commitments.
           </p>
-          <p><strong>The result.</strong>
+          <p><strong>The Result: </strong>
             The programming team also benefited. With a smaller scope, they now have time to polish our current systems. 
-            We chose a level we can finish well over a larger one we couldn’t, and the demo is better off and promises more. 
+            We chose a level we can finish well, over a larger one we couldn’t. The demo is better off and promises more. 
           </p>
         </section>
 
@@ -207,8 +437,10 @@ public interface IAbility
           </ul>
           <h3>Events</h3>
           <ul>  
-            <li>Showcased the game at ROC Game Fest twice</li>
-            <li>Showcased the game at Imagine RIT once</li>
+            <li>ROC Game Fest (2025, 2026)</li>
+            <li>Imagine RIT (2026)
+
+            </li>
           </ul>
           <h3>Community</h3>
           <ul>  
@@ -219,7 +451,7 @@ public interface IAbility
           <h3>What I would do differently</h3>
           <p>As this was my first time leading a professional project, I needed to learn a lot of strategies 
             and skills on the job. This caused friction for a short time until proper tracking was in place. 
-            Team roles were not concreely defined, tasks overlapped, design cohesion was sparse.
+            Team roles were not concretely defined, tasks overlapped, design cohesion was weak.
           </p>
           <p>
             On my next game project. I will structure the workflow first. I will write the high concept design 
@@ -252,8 +484,7 @@ public interface IAbility
         <li><a href="https://your-handle.itch.io">itch.io</a></li>
         <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
       </ul>
-      <p class="fine-print">&copy; 2026 Your Name</p>
-    </div>
+      <p class="fine-print">&copy; 2026 Adam Gayheart
   </footer>
 </body>
 </html>
