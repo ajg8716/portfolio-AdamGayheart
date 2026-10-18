@@ -226,3 +226,67 @@ mark { background: var(--mark); color: var(--ink); padding: 0 0.2em; }
   html { scroll-behavior: auto; }
   * { transition: none !important; animation: none !important; }
 }
+
+/* ---------- Project card thumbnails ---------- */
+.project-card img.thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ---------- Twine tag color ---------- */
+:root { --twine: #b0306a; }
+.project-card[data-engine="twine"] { border-top-color: var(--twine); }
+.project-card[data-engine="twine"] .tech { color: var(--twine); }
+
+/* ---------- Project cards: 3 across, stacked on smaller screens ---------- */
+.project-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem;
+}
+.project-card img.thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;      /* taller image, so more of each thumbnail shows */
+  object-fit: cover;
+  border-bottom: 1px solid var(--line);
+}
+.project-card .body { padding: 1.3rem 1.5rem 1.6rem; }
+.project-card h3 { font-size: var(--step-2); }
+
+/* Smaller desktops, tablets, phones: one column, stacked vertically */
+@media (max-width: 62rem) {
+  .project-grid { grid-template-columns: 1fr; max-width: 40rem; }
+  .project-card img.thumb { aspect-ratio: 16 / 9; }
+}
+
+/* ---------- About photo ---------- */
+.about { 
+  display: grid;
+  grid-template-columns: clamp(7rem, 30%, 22rem) minmax(0, 1fr);
+  gap: clamp(1rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.mephoto {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  aspect-ratio: 4 / 5;          /* portrait crop */
+  object-fit: cover;
+  object-position: 50% 20%;     /* keeps your face in frame */
+  border-radius: var(--radius);
+  outline: 3px solid var(--accent);   /* offset frame, echoes the viewfinder corners */
+  outline-offset: 10px;
+}
+
+@media (max-width: 40rem) {
+  .about .section-head { margin-bottom: 1rem; }
+  .about .section-head h2 { font-size: var(--step-2); }
+  .about p { font-size: var(--step--1); line-height: 1.55; }
+}

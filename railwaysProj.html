@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Railways | Adam Gayheart</title>
+  <meta name="description" content="[One line on what this project is and the skill it shows.]">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/.css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Adam Gayheart</a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="flagship.html">State of Entropy</a></li>
+          <li><a href="index.html#projects" aria-current="page">Other projects</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="case-hero">
+      <div class="wrap">
+        <h1>Railways</h1>
+        <p class="lede">Interactive narrative design and story writing.</p>
+
+        <dl class="facts" style="margin-top:2rem">
+          <div><dt>Type</dt><dd>Solo</dd></div>
+          <div><dt>Engine</dt><dd>Twine</dd></div>
+          <div><dt>Languages</dt><dd>Twine Harlowe</dd></div>
+          <div><dt>Duration</dt><dd>3 months</dd></div>
+          <div><dt>My role</dt><dd>interactive narrative designer, writer</dd></div>
+          <div class="btn-row" style="margin-top:1.75rem">
+          <a class="btn" href="/content/games/Railways/Railways.html" target="_blank">Play it</a> <!-- update link or delete -->
+        </div>
+        </dl>
+
+        <div class="viewfinder">
+          <span class="corner-bl"></span><span class="corner-br"></span>
+          <video controls autoplay>
+                 <source src="content/videos/other projects/railways.mp4" type="video/mp4">
+            </video>
+        </div>
+      </div>
+      </section>
+    </section>
+
+    <div class="wrap" style="padding-bottom: var(--section-space)">
+      <div class="case-body" style="max-width: 46rem">
+
+        <section>
+          <h2>The goal</h2>
+          <p>Use Twine to practice interactive narrative design.  
+            From design documents to a functional game with interesting characters, dialogue, and a cohesive plot. </p>
+          <h3>Pitch</h3>
+          <p>A choose-your-own-adventure game where you play as a young man who hops trains across the country and interacts 
+            with a diverse cast of characters. The full design has you managing money and addictions to survive the world and your 
+            deteriorating mental state. </p>
+        </section>
+
+        <section>
+          <h2>What it shows</h2>
+          <p>I planned the story in a beat sheet covering act structure and each character's wants, then built it in Twine. 
+            As well, implemented an additional gameplay mechanic: the compulsion meter. With full functionality, it would directly 
+            influence the player’s choices in game. </p>
+          <ul>
+            <li><strong>Planning: </strong>A beat sheet written before any passage. </li>
+            <li><strong>Writing: </strong>A branching story of about 3,100 words across 53 passages, with a cast of distinct characters.</li>
+            <li><strong>Presentation: </strong>A handwritten typeface and supporting audio effects mixed in Ableton Live. I also created a bar 
+              that tracks the player’s compulsion, simulating their addictive personality. This bar does not have influence on player choice yet. </li>
+          </ul>
+
+          <pre><code>
+            // increases compulsion by 5 each passage and prints to screen 
+          (set: $compulsion to (min: 100, it + 5))
+          (print: "
+            &lt;div id='compulsion-wrap'&gt;&lt;label&gt;Compulsion&lt;/label&gt;
+              &lt;div id='compulsion-bar'&gt;
+                &lt;div id='compulsion-fill' style='width:" + (str: $compulsion) + "%'&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;")
+        </code></pre>
+        </section>
+
+        <section>
+          <h2>What I would change</h2>
+          <p>The first act is laid out. When I return to polish it. I want to finish the final events with dialogue. 
+            Get the compulsion meter influencing player decisions, and add functional money and inventory. I would also add hand-drawn 
+            art and more audio. This will complete the first section of the story and be a stronger prototype.  </p>
+        </section>
+
+        <div class="gallery">
+          <img class = "thumb" src="content/images/OtherProjects/railwaysTwine.png"
+                alt="Rally car jumping off a ramp"
+                loading="lazy">
+        </div>
+      </div>
+
+      <div class="pager">
+        <a href="index.html#projects">Back to all projects</a>
+        <a href="flagship.html">See the flagship case study</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <h2>Get in touch</h2>
+      <div class="btn-row">
+        <a class="btn" href="mailto:you@example.com">Email me</a>
+        <a class="btn btn--ghost" href="resume.pdf" download>Download resume</a>
+      </div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/your-handle">GitHub</a></li>
+        <li><a href="https://your-handle.itch.io">itch.io</a></li>
+        <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+      </ul>
+      <p class="fine-print">&copy; 2026 Adam Gayheart</p>
+    </div>
+  </footer>
+</body>
+</html>
