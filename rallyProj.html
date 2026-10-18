@@ -12,9 +12,6 @@
   <link rel="stylesheet" href="styles/.css/styles.css">
 </head>
 <body>
-  <!-- TEMPLATE: copy this file for each project (e.g. unity-tower-defense.html),
-       then point that project's card in index.html at the new file. -->
-
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
@@ -34,24 +31,24 @@
   <main id="main">
     <section class="case-hero">
       <div class="wrap">
-        <h1>[Project name]</h1>
+        <h1>Rally Car Driving</h1>
         <p class="lede">[One sentence: what it is and the skill it demonstrates.]</p>
 
         <dl class="facts" style="margin-top:2rem">
-          <div><dt>Type</dt><dd>[Class project / solo / team of N]</dd></div>
-          <div><dt>Engine</dt><dd>[Unity / Unreal / Node.js]</dd></div>
-          <div><dt>Languages</dt><dd>[C# / C++ / JavaScript]</dd></div>
-          <div><dt>Duration</dt><dd>[e.g. 6 weeks]</dd></div>
-          <div><dt>My role</dt><dd>[What you did]</dd></div>
+          <div><dt>Type</dt><dd>Solo</dd></div>
+          <div><dt>Engine</dt><dd>Unity</dd></div>
+          <div><dt>Languages</dt><dd>C#</dd></div>
+          <div><dt>Duration</dt><dd>1 week</dd></div>
+          <div><dt>My role</dt><dd>physics-based car physics</dd></div>
+          <div class="btn-row" style="margin-top:1.75rem">
+          <a class="btn" href="/content/games/Rally/index.html" target="_blank">Play it</a>
         </dl>
 
         <div class="viewfinder">
           <span class="corner-bl"></span><span class="corner-br"></span>
-          <div class="placeholder">Gameplay video or GIF</div>
-        </div>
-        <div class="btn-row" style="margin-top:1.75rem">
-          <a class="btn" href="#">Play it</a> <!-- update link or delete -->
-          <a class="btn btn--ghost" href="#">View source</a> <!-- update link or delete -->
+          <video controls autoplay>
+                 <source src="content/videos/other projects/Rally Demo.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </section>
@@ -61,29 +58,87 @@
 
         <section>
           <h2>The goal</h2>
-          <p>[The assignment or idea, and what you set out to learn or prove.]</p>
+          <p>Create a car controller from scratch that simulates rally-car physics to practice Unity scripting 
+            and build a universal controller that works across multiple cars. It's a proof of concept for a full 
+            racing game. </p>
         </section>
 
         <section>
           <h2>What it shows</h2>
-          <p>[The programming skill this project demonstrates and how you applied it.]</p>
+          <p>This project builds vehicle physics from first principles instead of relying on Unity's 
+            wheel colliders. </p>
           <ul>
-            <li>[Concrete thing you built]</li>
-            <li>[Concrete thing you built]</li>
+            <li><strong>Spring-damper: </strong>Each wheel raycasts to the ground, measures its spring compression, and applies a force from that compression, minus a damping term based on the wheel’s velocity.</li>
+            <li><strong>Force-based driving: </strong>Acceleration is applied at a point on the car, and the steering torque scales with a turning curve driven by the car’s speed.</li>
+            <li><strong>Grip: </strong>A sideways drag force cancels lateral velocity in the car’s local space, so the car doesn’t slide as if on ice. </li>
+            <li><strong>Tunable by design: </strong>Every setting is a serialized field, so each car can be tuned in the editor without touching code.</li>
           </ul>
 
-          <pre><code>// Optional: one short snippet you are proud of
-</code></pre>
-        </section>
+        <figure>
+          <pre><code>
+private void Suspension()
+{
+    for (int i = 0; i < rayPoints.Length; i++)
+    {
+        RaycastHit hit;
+        //maximum length of spring
+        float maxLength = restLength + springTravel;
+
+        if (Physics.Raycast(rayPoints[i].position, -rayPoints[i].up, out hit, maxLength + wheelRadius, drivable))
+        {
+            wheelsIsGrounded[i] = 1;
+
+            //how much spring contracted from resting
+            float currentSpringLength = hit.distance - wheelRadius;
+            //current compression of the spring
+            float springCompression = (restLength - currentSpringLength) / springTravel;
+
+            //Dampaning force 
+            float springVelocity = Vector3.Dot(carRB.GetPointVelocity(rayPoints[i].position), rayPoints[i].up);
+            float dampForce = damperStiffness * springVelocity;
+
+            //force required based on spring compression
+            float springForce = springStiffness * springCompression;
+            
+            //apply damp force
+            float netForce = springForce - dampForce;
+
+            //adds the calculated force to the rigidbody
+            carRB.AddForceAtPosition(netForce * rayPoints[i].up, rayPoints[i].position);
+
+            Debug.DrawLine(rayPoints[i].position, hit.point, Color.red);
+        }
+        else
+        {
+            Debug.DrawLine(rayPoints[i].position, rayPoints[i].position + (wheelRadius + maxLength) * -rayPoints[i].up, Color.green);
+        }
+    }
+}
+        </code></pre>
+        <figcaption>Suspension(): one ray per wheel, with a spring force minus damping applied at the wheel's position.</figcaption>
+      </figure>
+    </section>
 
         <section>
           <h2>What I would change</h2>
-          <p>[One or two honest sentences about what you would improve.]</p>
+          <p>This is a proof of concept, and several parts need work before it feels like a rally car:
+          <ul>
+            <li>Add a grip model with slip so the car handles differently on different terrain: mud, gravel, tarmac.</li>
+            <li>Separate braking and coasting from throttle, and enforce a real stop speed. </li>
+            <li>Fix airborne handling so the car keeps its momentum and has some control in the air.</li>
+            <li>Test the controller on several cars to prove it works as a universal setup. </li>
+            <li>Add visual feedback so the player can see the wheels respond to their input and interact with the world.</li>
+          </ul>
+          </p>
         </section>
 
         <div class="gallery">
-          <div class="placeholder">Screenshot 1</div>
-          <div class="placeholder">Screenshot 2</div>
+          <img class = "thumb" src="content/images/OtherProjects/RallySuspension.png"
+                alt="Rally car suspension rays shown"
+                loading="lazy">
+          <img class = "thumb" src="content/images/OtherProjects/RallyBump.png"
+                alt="Rally car going over bumps"
+                loading="lazy">
         </div>
       </div>
 
