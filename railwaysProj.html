@@ -41,7 +41,7 @@
           <div><dt>Duration</dt><dd>3 months</dd></div>
           <div><dt>My role</dt><dd>interactive narrative designer, writer</dd></div>
           <div class="btn-row" style="margin-top:1.75rem">
-          <a class="btn" href="/content/games/Railways/Railways.html" target="_blank">Play it</a> <!-- update link or delete -->
+          <a class="btn" href="/content/games/Railways/Railways.html" target="_blank">Play it</a>
         </div>
         </dl>
 
@@ -81,15 +81,15 @@
           </ul>
 
           <pre><code>
-            // increases compulsion by 5 each passage and prints to screen 
-          (set: $compulsion to (min: 100, it + 5))
-          (print: "
-            &lt;div id='compulsion-wrap'&gt;&lt;label&gt;Compulsion&lt;/label&gt;
-              &lt;div id='compulsion-bar'&gt;
-                &lt;div id='compulsion-fill' style='width:" + (str: $compulsion) + "%'&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;")
+  // increases compulsion by 5 each passage and prints to screen 
+(set: $compulsion to (min: 100, it + 5))
+(print: "
+  &lt;div id='compulsion-wrap'&gt;&lt;label&gt;Compulsion&lt;/label&gt;
+    &lt;div id='compulsion-bar'&gt;
+      &lt;div id='compulsion-fill' style='width:" + (str: $compulsion) + "%'&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;")
         </code></pre>
         </section>
 
