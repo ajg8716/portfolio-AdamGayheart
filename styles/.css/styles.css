@@ -2,16 +2,26 @@
    Game dev portfolio: styles.css
    Edit the tokens in :root first. Most of the look comes from them.
    ========================================================================== */
-
+.barlow-regular {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.share-tech-regular {
+  font-family: "Share Tech", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 :root {
   /* Color */
-  --paper: #edf0f5;      /* page background */
-  --surface: #f8f9fb;    /* panels, cards */
-  --ink: #131a2b;        /* text */
-  --muted: #55607a;      /* secondary text */
-  --line: #c9d0de;       /* borders */
-  --accent: #2748f0;     /* links, buttons, focus */
-  --accent-ink: #ffffff; /* text on accent */
+  --paper: #1c1b1e;      /* page background */
+  --surface: #2a272d;    /* panels, cards */
+  --ink: #92a4ff;        /* text */
+  --deep: #121114;       /* footer */
+  --muted: #aaa5b8;      /* secondary text */
+  --line: #4a4552;       /* borders */
+  --accent: #9fb0ff;     /* links, buttons, focus */
+  --accent-ink: #12142a; /* text on accent */
   --mark: #ffe066;       /* highlighter, used sparingly */
 
   /* Engine tags: change or add engines here */
@@ -21,8 +31,8 @@
   --other: #55607a;
 
   /* Type */
-  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Share Tech", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
   --font-code: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
 
   /* Type scale */
@@ -209,7 +219,7 @@ mark { background: var(--mark); color: var(--ink); padding: 0 0.2em; }
 .pager { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 2rem; border-top: 1px solid var(--line); }
 
 /* ---------- Footer ---------- */
-.site-footer { background: var(--ink); color: #dfe5f2; padding-block: var(--section-space) 2rem; }
+.site-footer { background: var(--deep); color: #dfe5f2; padding-block: var(--section-space) 2rem; }
 .site-footer h2 { font-size: var(--step-3); color: #fff; margin-bottom: 0.75rem; }
 .site-footer p { color: #b7c0d6; }
 .site-footer a { color: #fff; }
