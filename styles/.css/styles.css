@@ -108,7 +108,7 @@ li { margin-bottom: 0.4em; max-width: 65ch; }
 .hero .lede { font-size: var(--step-1); color: var(--muted); max-width: 48ch; margin-bottom: 2.5rem; }
 
 /* The one memorable element: reel framed like a camera viewfinder */
-.viewfinder { position: relative; background: var(--ink); aspect-ratio: 16 / 9; }
+.viewfinder { position: relative; background: var(--deep); aspect-ratio: 16 / 9; }
 .viewfinder::before, .viewfinder::after,
 .viewfinder > .corner-bl, .viewfinder > .corner-br { content: ""; position: absolute; width: 2rem; height: 2rem; border: 4px solid var(--accent); pointer-events: none; z-index: 2; }
 .viewfinder::before { top: -10px; left: -10px; border-right: 0; border-bottom: 0; }
@@ -178,6 +178,53 @@ li { margin-bottom: 0.4em; max-width: 65ch; }
 @media (min-width: 52rem) { .about { grid-template-columns: 1fr 2fr; gap: 4rem; } }
 .about .portrait { aspect-ratio: 4 / 5; max-width: 20rem; }
 
+/* ---------- Flagship feature: image backdrop ---------- */
+.flagship {
+  position: relative;
+  isolation: isolate;           /* keeps the z-index layers contained */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: clamp(28rem, 60vw, 40rem);
+  background: var(--deep);
+  border-block: 1px solid var(--line);
+}
+
+.flagship__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+}
+
+/* Dark gradient so text stays readable over any part of the image */
+.flagship::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--deep) 75%, transparent) 0%,
+    color-mix(in srgb, var(--deep) 60%, transparent) 30%,
+    color-mix(in srgb, var(--deep) 0%, transparent) 100%
+  );
+}
+
+.flagship__content > * { max-width: 38rem; }
+.flagship h2 { font-size: var(--step-3); margin-bottom: 1rem; }
+.flagship p { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6); }
+
+/* On narrow screens the text spans the whole image, so darken it evenly */
+@media (max-width: 52rem) {
+  .flagship::before {
+    background: color-mix(in srgb, var(--deep) 82%, transparent);
+  }
+}
+
 /* ---------- Case study layout ---------- */
 .case-hero { padding-block: clamp(2.5rem, 6vw, 4rem) 2rem; }
 .case-hero h1 { font-size: var(--step-4); font-weight: 800; margin-bottom: 1rem; }
@@ -208,7 +255,7 @@ li { margin-bottom: 0.4em; max-width: 65ch; }
 .system dt { font-weight: 600; margin-top: 1rem; }
 .system dd { margin: 0.2rem 0 0; max-width: 65ch; }
 
-pre { overflow-x: auto; background: var(--ink); color: #e6ebf7; padding: 1.1rem 1.25rem; border-radius: var(--radius); font-family: var(--font-code); font-size: 0.9rem; line-height: 1.55; }
+pre { overflow-x: auto; background: var(--deep); color: #e6ebf7; padding: 1.1rem 1.25rem; border-radius: var(--radius); font-family: var(--font-code); font-size: 0.9rem; line-height: 1.55; }
 code { font-family: var(--font-code); font-size: 0.92em; }
 :not(pre) > code { background: #dfe5f0; padding: 0.1em 0.35em; border-radius: 3px; }
 mark { background: var(--mark); color: var(--ink); padding: 0 0.2em; }

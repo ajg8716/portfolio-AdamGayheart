@@ -360,3 +360,28 @@ pre { background: #0a1519; color: var(--text); border: 1px solid var(--line); }
 
 strong, b { color: var(--accent); font-weight: 600; }
 .case-body details strong { color: var(--ink); }
+
+/* ---------- Case study: text + image rows ---------- */
+.outcome-row {
+  display: grid;
+  gap: 1.5rem 3rem;
+  align-items: center;          /* centers the image against the text */
+  margin-top: 2.5rem;
+}
+.outcome-row h3:first-child { margin-top: 0; }
+.case-body .outcome-row figure { margin: 0; }
+.outcome-row img {
+  width: 100%;
+  height: auto;                 /* natural proportions, no cropping */
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+@media (min-width: 52rem) {
+  .outcome-row { grid-template-columns: minmax(0, 1fr) minmax(0, 24rem); }
+  .outcome-row--flip { grid-template-columns: minmax(0, 24rem) minmax(0, 1fr); }
+  .outcome-row--tall {grid-template-columns: minmax(0,1fr) 20rem; }
+  .case-body .outcome-row--flip figure { order: -1; }
+}
+
+.outcome-row--tall img {max-height: none; }
