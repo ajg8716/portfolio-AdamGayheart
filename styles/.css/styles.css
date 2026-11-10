@@ -7,20 +7,16 @@
   font-weight: 400;
   font-style: normal;
 }
-.share-tech-regular {
-  font-family: "Share Tech", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+
 :root {
   /* Color */
-  --paper: #1c1b1e;      /* page background */
-  --surface: #2a272d;    /* panels, cards */
-  --ink: #92a4ff;        /* text */
+  --paper: #121014;      /* page background */
+  --surface: #18141b;    /* panels, cards */
+  --ink: #ebe9f1;        /* text */
   --deep: #121114;       /* footer */
-  --muted: #aaa5b8;      /* secondary text */
-  --line: #4a4552;       /* borders */
-  --accent: #9fb0ff;     /* links, buttons, focus */
+  --muted: #aea5b8;      /* secondary text */
+  --line: #473b58;       /* borders */
+  --accent: #9fb9ff;     /* links, buttons, focus */
   --accent-ink: #12142a; /* text on accent */
   --mark: #ffe066;       /* highlighter, used sparingly */
 
@@ -31,7 +27,7 @@
   --other: #55607a;
 
   /* Type */
-  --font-display: "Share Tech", "Segoe UI", system-ui, sans-serif;
+  --font-display: "JetBrains Mono", system-ui, sans-serif;
   --font-body: "Barlow", "Segoe UI", system-ui, sans-serif;
   --font-code: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
 
@@ -103,9 +99,20 @@ li { margin-bottom: 0.4em; max-width: 65ch; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 /* ---------- Hero ---------- */
-.hero { padding-block: clamp(2.5rem, 6vw, 4.5rem) var(--section-space); }
-.hero h1 { font-size: var(--step-4); font-weight: 800; max-width: 17ch; margin-bottom: 1.25rem; }
-.hero .lede { font-size: var(--step-1); color: var(--muted); max-width: 48ch; margin-bottom: 2.5rem; }
+.hero { padding-block: clamp(2.5rem, 6vw, 7.5rem) var(--section-space); color: var(--ink);}
+.hero h1 { 
+  font-size: clamp(2.4rem, 1.4rem + 3.6vw, 4rem); 
+  font-weight: 800; 
+  max-width: none; 
+  margin-bottom: 1rem; 
+}
+.hero h1 span { color: var(--accent);}
+.hero .lede { 
+  font-size: var(--step-1); 
+  color: var(--muted); 
+  max-width: 52ch; 
+  margin-bottom: 2.5rem; 
+}
 
 /* The one memorable element: reel framed like a camera viewfinder */
 .viewfinder { position: relative; background: var(--deep); aspect-ratio: 16 / 9; }

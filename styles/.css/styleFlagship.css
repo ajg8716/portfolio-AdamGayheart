@@ -13,9 +13,9 @@
 
 :root {
   /* Color */
-  --paper: #071013;      /* page background */
-  --surface: #0d1a1f;    /* panels, cards */
-  --surface-2: #132329;    /* hover, code chips */
+  --paper: #07090a;      /* page background */
+  --surface: #0b1316;    /* panels, cards */
+  --surface-2: #0e1a1f;    /* hover, code chips */
   --ink: #97dce6;        /* text */
   --text: #d5e3e7;           /* body text */
   --muted: #4ca4af;      /* secondary text */
